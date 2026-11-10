@@ -9,60 +9,89 @@ img {
     height: auto;
 }
 
-/* 2. Dasar halaman: warna dan huruf */
+/* 2. Variabel warna tema terang */
+:root {
+    --warna-utama: #334155;
+    --warna-judul: #334155;
+    --warna-tautan: #c34f79;
+    --warna-latar:
+        radial-gradient(circle at 15% 20%, rgba(91, 207, 255, 0.20), transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(157, 112, 255, 0.18), transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(255, 135, 202, 0.14), transparent 45%),
+        linear-gradient(135deg, #edf6ff, #f5f1ff, #fff1f7);
+    --warna-teks: #344256;
+    --warna-kartu: rgba(255, 255, 255, 0.58);
+    --warna-garis: rgba(255, 255, 255, 0.78);
+    --warna-header: rgba(255, 255, 255, 0.62);
+    --warna-header-teks: #26364f;
+    --warna-nav-teks: #334155;
+    --warna-footer: rgba(226, 235, 248, 0.58);
+    --warna-footer-teks: #334155;
+    --warna-input: rgba(255, 255, 255, 0.58);
+    --warna-input-teks: #344256;
+    --warna-aksen: #d65b87;
+    --warna-tombol-teks: #ffffff;
+    --warna-menu: rgba(255, 255, 255, 0.90);
+    --warna-menu-teks: #334155;
+    --warna-tabel: rgba(216, 228, 245, 0.78);
+    --bayangan-kartu: 0 12px 40px rgba(74, 91, 125, 0.13), 0 0 30px rgba(91, 160, 255, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.70);
+    --bayangan-header: 0 8px 30px rgba(70, 80, 110, 0.10);
+}
+
+/* Tema gelap: tampilan asli portofolio */
+body.gelap {
+    --warna-utama: #0B1526;
+    --warna-judul: #A1A5AB;
+    --warna-tautan: #FF8A8A;
+    --warna-latar:
+        radial-gradient(circle at 15% 20%, rgba(91, 207, 255, 0.12), transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(157, 112, 255, 0.14), transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(255, 135, 202, 0.08), transparent 45%),
+        linear-gradient(135deg, #070d18, #0b1020, #101022);
+    --warna-teks: #eaf2ff;
+    --warna-kartu: rgba(255, 255, 255, 0.07);
+    --warna-garis: rgba(255, 255, 255, 0.12);
+    --warna-header: rgba(7, 13, 24, 0.72);
+    --warna-header-teks: #ffffff;
+    --warna-nav-teks: #ffffff;
+    --warna-footer: rgba(29, 53, 87, 0.92);
+    --warna-footer-teks: #F1FAEE;
+    --warna-input: rgba(7, 13, 24, 0.55);
+    --warna-input-teks: #eaf2ff;
+    --warna-aksen: #E63946;
+    --warna-tombol-teks: #ffffff;
+    --warna-menu: rgba(9, 19, 34, 0.94);
+    --warna-menu-teks: #dbeafe;
+    --warna-tabel: #1D3557;
+    --bayangan-kartu: 0 12px 40px rgba(0, 0, 0, 0.35), 0 0 30px rgba(91, 207, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    --bayangan-header: 0 8px 30px rgba(0, 0, 0, 0.35), 0 1px 15px rgba(91, 207, 255, 0.05);
+}
+
+/* 3. Dasar halaman */
 body {
     font-family: "Inter", Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.6;
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(91, 207, 255, 0.12),
-            transparent 40%
-        ),
-        radial-gradient(
-            circle at 85% 30%,
-            rgba(157, 112, 255, 0.14),
-            transparent 45%
-        ),
-        radial-gradient(
-            circle at 50% 90%,
-            rgba(255, 135, 202, 0.08),
-            transparent 45%
-        ),
-        linear-gradient(
-            135deg,
-            #070d18,
-            #0b1020,
-            #101022
-        );
-
+    background: var(--warna-latar);
     background-attachment: fixed;
     min-height: 100vh;
-    color: #eaf2ff;
-    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.35);
+    color: var(--warna-teks);
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.12);
     position: relative;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3 {
     font-family: "Poppins", Arial, sans-serif;
-    color: #a1a5ab;
+    color: var(--warna-judul);
     line-height: 1.3;
 }
 
-h2 {
-    margin-bottom: 0.75rem;
-}
+h2 { margin-bottom: 0.75rem; }
+p, ul, ol { margin-bottom: 1rem; }
+a { color: var(--warna-tautan); }
 
-p, ul, ol {
-    margin-bottom: 1rem;
-}
-
-a {
-    color: #E63946;
-}
-
-/* 3. Wadah, header, dan menu */
+/* 4. Wadah, header, dan menu */
 .container {
     width: 100%;
     max-width: 1100px;
@@ -74,17 +103,15 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(7, 13, 24, 0.72);
+    background: var(--warna-header);
     backdrop-filter: blur(24px) saturate(155%);
     -webkit-backdrop-filter: blur(24px) saturate(155%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.35),
-        0 1px 15px rgba(91, 207, 255, 0.05);
+    border-bottom: 1px solid var(--warna-garis);
+    box-shadow: var(--bayangan-header);
 }
 
 header h1 {
-    color: #FFFFFF;
+    color: var(--warna-header-teks);
     font-size: 1.5rem;
 }
 
@@ -92,7 +119,7 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 12px;
     padding-top: 16px;
     padding-bottom: 16px;
 }
@@ -109,44 +136,38 @@ nav a {
     display: inline-block;
     padding: 0.5rem 0.75rem;
     border-radius: 6px;
-    color: #FFFFFF;
+    color: var(--warna-nav-teks);
     font-weight: 600;
     text-decoration: none;
 }
 
 /* Menu ponsel */
-.menu-laptop {
-    display: none;
-}
-
+.menu-laptop { display: none; }
 .menu-ponsel {
     display: block;
     position: relative;
 }
-
 .menu-ponsel summary {
     padding: 0.5rem 0.75rem;
-    border: 1px solid #FFFFFF;
+    border: 1px solid var(--warna-garis);
     border-radius: 6px;
+    color: var(--warna-nav-teks);
     font-weight: 600;
     cursor: pointer;
 }
-
 .menu-ponsel ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
 .menu-ponsel a {
     display: block;
     padding: 12px;
     border-radius: 10px;
-    color: #dbeafe;
+    color: var(--warna-menu-teks);
     text-decoration: none;
     transition: 0.2s ease;
 }
-
 .menu-ponsel nav {
     position: absolute;
     top: calc(100% + 10px);
@@ -154,17 +175,15 @@ nav a {
     min-width: 170px;
     padding: 8px;
     border-radius: 16px;
-    background: rgba(9, 19, 34, 0.94);
+    background: var(--warna-menu);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+    border: 1px solid var(--warna-garis);
+    box-shadow: var(--bayangan-header);
 }
 
-/* 4. Isi utama, hero, dan kartu */
-main {
-    padding: 1.5rem 0;
-}
+/* 5. Hero dan kartu glassmorphism */
+main { padding: 1.5rem 0; }
 
 .hero {
     display: flex;
@@ -174,35 +193,29 @@ main {
     padding: 1rem 0 2rem;
     text-align: center;
 }
-
 .hero img {
-    border: 4px solid #E63946;
+    border: 4px solid var(--warna-aksen);
     border-radius: 50%;
 }
-
-.hero h2 {
-    font-size: 2rem;
-}
+.hero h2 { font-size: 2rem; }
 
 .tombol {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
-    background-color: #E63946;
-    color: #FFFFFF;
+    background-color: var(--warna-aksen);
+    color: var(--warna-tombol-teks);
     font-weight: 600;
     text-decoration: none;
 }
 
 .kartu {
-    background: rgba(255, 255, 255, 0.07);
+    background: var(--warna-kartu);
     backdrop-filter: blur(24px) saturate(155%);
     -webkit-backdrop-filter: blur(24px) saturate(155%);
+    border: 1px solid var(--warna-garis);
     border-radius: 12px;
-    box-shadow:
-        0 12px 40px rgba(0, 0, 0, 0.35),
-        0 0 30px rgba(91, 207, 255, 0.18),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    box-shadow: var(--bayangan-kartu);
     transition: all 0.3s ease;
     padding: 1rem;
     margin-bottom: 1.5rem;
@@ -214,121 +227,134 @@ main {
     gap: 1.5rem;
     margin-bottom: 1.5rem;
 }
-
 .daftar-kartu .kartu {
     flex: 1 1 280px;
     margin-bottom: 0;
 }
+article img { border-radius: 8px; }
 
-article img {
+.label {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    margin-bottom: 0.6rem;
+    border: 1px solid var(--warna-garis);
+    border-radius: 20px;
+    background: var(--warna-kartu);
+    color: var(--warna-teks);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* 6. Tombol tema dan filter */
+.tombol-tema, .tombol-filter {
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--warna-garis);
     border-radius: 8px;
+    background: var(--warna-kartu);
+    color: var(--warna-teks);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.filter-proyek {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 1rem 0;
+}
+.tombol-filter.aktif {
+    background-color: var(--warna-aksen);
+    border-color: var(--warna-aksen);
+    color: var(--warna-tombol-teks);
 }
 
-/* 5. Tabel */
-table {
-    border-collapse: collapse;
-}
-
+/* 7. Tabel */
+table { border-collapse: collapse; }
 caption {
     font-weight: 600;
     text-align: left;
     margin-bottom: 0.5rem;
 }
-
 th, td {
-    border: 1px solid #CCCCCC;
+    border: 1px solid var(--warna-garis);
     padding: 0.5rem 0.75rem;
     text-align: left;
 }
-
 th {
-    background-color: #1D3557;
+    background-color: var(--warna-tabel);
     color: #FFFFFF;
 }
 
-/* 6. Form */
-label {
-    font-weight: 600;
-}
-
+/* 8. Form */
+label { font-weight: 600; }
 input, select, textarea {
     width: 100%;
     max-width: 22rem;
     padding: 0.6rem;
     margin-top: 0.25rem;
-    border: 1px solid #CCCCCC;
+    border: 1px solid var(--warna-garis);
     border-radius: 6px;
+    background: var(--warna-input);
+    color: var(--warna-input-teks);
     font-family: inherit;
     font-size: 1rem;
 }
+#hitung-karakter {
+    display: inline-block;
+    margin-top: 0.35rem;
+    color: var(--warna-teks);
+    font-size: 0.85rem;
+}
 
+/* 9. Tombol umum */
 button {
     padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 6px;
-    background-color: #E63946;
-    color: #FFFFFF;
+    background-color: var(--warna-aksen);
+    color: var(--warna-tombol-teks);
     font-family: inherit;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
 }
 
-/* 7. Footer */
+/* 10. Footer */
 footer {
-    background-color: #1D3557;
-    color: #F1FAEE;
+    background: var(--warna-footer);
+    backdrop-filter: blur(24px) saturate(155%);
+    -webkit-backdrop-filter: blur(24px) saturate(155%);
+    border-top: 1px solid var(--warna-garis);
+    color: var(--warna-footer-teks);
     text-align: center;
     padding: 1.5rem;
 }
+footer p { margin-bottom: 0.25rem; }
+footer a { color: var(--warna-nav-teks); }
 
-footer p {
-    margin-bottom: 0.25rem;
-}
-
-footer a {
-    color: #FFFFFF;
-}
-
-/* 8. Tablet dan desktop */
+/* 11. Tablet dan desktop */
 @media screen and (min-width: 768px) {
-    .menu-laptop {
-        display: block;
-    }
-
+    .menu-laptop { display: block; }
     .menu-laptop ul {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 0.25rem;
     }
-
-    .menu-ponsel {
-        display: none;
-    }
-
+    .menu-ponsel { display: none; }
     .hero {
         flex-direction: row;
         padding: 2rem 0 3rem;
         text-align: left;
     }
-
-    .kartu {
-        padding: 1.5rem;
-    }
+    .kartu { padding: 1.5rem; }
 }
 
-/* 9. Laptop */
+/* 12. Laptop */
 @media screen and (min-width: 1024px) {
-    main {
-        padding: 2.5rem 0;
-    }
-
-    .hero {
-        gap: 3rem;
-    }
-
-    .hero h2 {
-        font-size: 2.75rem;
-    }
+    main { padding: 2.5rem 0; }
+    .hero { gap: 3rem; }
+    .hero h2 { font-size: 2.75rem; }
 }

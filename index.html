@@ -8,10 +8,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
   <script src="js/latihan.js" defer></script>
   <script src="js/logika.js" defer></script>
 </head>
-<body>
+<body class="gelap">
 <header>
     <div class="container navbar">
         <h1>Rasendriya</h1>
@@ -36,6 +37,7 @@
                 </ul>
             </nav>
         </details>
+        <button type="button" id="tombol-tema" class="tombol-tema">Mode Terang</button>
     </div>
 </header>
 
@@ -78,13 +80,8 @@
 
         <section class="kartu">
           <h2>Keahlian</h2>
-          <ul>
-            <li>HTML dasar (sedang dipelajari)</li>
-            <li>Java Script (sedang dipelajari)</li>
-            <li>Mengetik cepat</li>
-            <li>Desain poster dengan Canva</li>
-            <li>Android modified</li>
-          </ul>
+          <ul id="daftar-skill"></ul>
+          <p id="jumlah-skill"></p>
         </section>
       </div>
 
