@@ -11,17 +11,13 @@ img {
 
 /* 2. Variabel warna tema terang */
 :root {
-    --warna-utama: #334155;
-    --warna-judul: #334155;
-    --warna-tautan: #c34f79;
-    --warna-latar:
-        radial-gradient(circle at 15% 20%, rgba(91, 207, 255, 0.20), transparent 40%),
-        radial-gradient(circle at 85% 30%, rgba(157, 112, 255, 0.18), transparent 45%),
-        radial-gradient(circle at 50% 90%, rgba(255, 135, 202, 0.14), transparent 45%),
-        linear-gradient(135deg, #edf6ff, #f5f1ff, #fff1f7);
-    --warna-teks: #344256;
-    --warna-kartu: rgba(255, 255, 255, 0.58);
-    --warna-garis: rgba(255, 255, 255, 0.78);
+    --warna-utama: #1D3557;
+    --warna-judul: #1D3557;
+    --warna-tautan: #C1121F;
+    --warna-latar: #F1FAEE;
+    --warna-teks: #333333;
+    --warna-kartu: #FFFFFF;
+    --warna-garis: #DDDDDD;
     --warna-header: rgba(255, 255, 255, 0.62);
     --warna-header-teks: #26364f;
     --warna-nav-teks: #334155;
@@ -29,11 +25,11 @@ img {
     --warna-footer-teks: #334155;
     --warna-input: rgba(255, 255, 255, 0.58);
     --warna-input-teks: #344256;
-    --warna-aksen: #d65b87;
+    --warna-aksen: #C1121F;
     --warna-tombol-teks: #ffffff;
     --warna-menu: rgba(255, 255, 255, 0.90);
     --warna-menu-teks: #334155;
-    --warna-tabel: rgba(216, 228, 245, 0.78);
+    --warna-tabel: #1D3557;
     --bayangan-kartu: 0 12px 40px rgba(74, 91, 125, 0.13), 0 0 30px rgba(91, 160, 255, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.70);
     --bayangan-header: 0 8px 30px rgba(70, 80, 110, 0.10);
 }
@@ -58,7 +54,7 @@ body.gelap {
     --warna-footer-teks: #F1FAEE;
     --warna-input: rgba(7, 13, 24, 0.55);
     --warna-input-teks: #eaf2ff;
-    --warna-aksen: #E63946;
+    --warna-aksen: #C1121F;
     --warna-tombol-teks: #ffffff;
     --warna-menu: rgba(9, 19, 34, 0.94);
     --warna-menu-teks: #dbeafe;
@@ -230,6 +226,10 @@ main { padding: 1.5rem 0; }
 .daftar-kartu .kartu {
     flex: 1 1 280px;
     margin-bottom: 0;
+}
+
+#daftar-proyek {
+    min-height: 30rem;
 }
 article img { border-radius: 8px; }
 

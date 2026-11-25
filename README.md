@@ -1,42 +1,57 @@
 # Profil Digital Responsive - Rasen
 
-Website profil pribadi yang dibuat sebagai project pembelajaran **Junior Web Developer** di SMKN 1 Pasuruan.
+Website portofolio pribadi yang dibuat sebagai project pembelajaran **Junior Web Developer** di Kelas Industri UBIG, SMKN 1 Pasuruan.
 
-## 👨‍💻 Tentang Project
+Versi ini merupakan **Portofolio v2** untuk Paket 1, Minggu 01 sampai 09.
 
-Website ini menampilkan profil pribadi, informasi singkat, dan beberapa halaman navigasi dengan desain responsif.
+## Fitur
 
-## 🛠️ Teknologi yang Digunakan
+- Halaman **Beranda** berisi profil, hobi, cita-cita, jadwal belajar, dan daftar keahlian dari `data/keahlian.json`.
+- Halaman **Proyek** menampilkan enam kartu proyek dari `data/proyek.json`, dilengkapi filter kategori HTML, CSS, dan JavaScript.
+- Halaman **Proyek** menampilkan daftar repositori GitHub terbaru melalui GitHub REST API.
+- Halaman **Kontak** memiliki form dan penghitung karakter pesan.
+- Mode gelap dan mode terang di ketiga halaman.
+- Tampilan responsif untuk ponsel, tablet, dan laptop.
+
+## Teknologi
 
 - HTML5
-- CSS3
-- JavaScript
+- CSS3 (Flexbox, media query, dan variabel CSS)
+- JavaScript (DOM, event, `fetch`, dan `async`/`await`)
+- JSON dan GitHub REST API
+- Git, GitHub, dan Vercel
 
-## ✨ Fitur
-
-- Tampilan responsif untuk desktop dan HP
-- Navigasi menu desktop dan mobile
-- Desain dark glassmorphism
-- Kartu profil dengan efek visual
-
-## 📁 Struktur Folder
+## Struktur Folder
 
 ```text
-project/
+portofolio-Rasen/
 ├── index.html
 ├── proyek.html
 ├── kontak.html
 ├── README.md
 ├── css/
 │   └── style.css
-└── assets/
+├── data/
+│   ├── keahlian.json
+│   └── proyek.json
+├── img/
+│   ├── foto-profil.jpg
+│   └── gambar proyek
+└── js/
+    ├── latihan.js
+    ├── logika.js
+    └── main.js
 ```
 
-## 🚀 Demo Website
+## Skor Lighthouse (Mobile)
 
-Link: https://portofolio-rasen-rasnzz.vercel.app
+Isi skor Performance, Accessibility, Best Practices, dan SEO untuk halaman Beranda, Proyek, dan Kontak setelah pengujian Lighthouse pada versi live selesai dilakukan. Skor belum dicantumkan agar tidak memakai angka yang belum diukur.
 
-## 👤 Pembuat
+## Website
+
+https://portofolio-rasen-rasnzz.vercel.app
+
+## Pembuat
 
 **Rasendriya Sahwahita Putra**  
-SMKN 1 Pasuruan — Kelas 10 RPL 1
+SMKN 1 Pasuruan - Kelas X RPL 1
